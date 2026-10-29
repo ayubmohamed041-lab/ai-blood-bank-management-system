@@ -8,6 +8,14 @@ import os
 import sys
 import json
 from pathlib import Path
+
+# Force UTF-8 on Windows console
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 
@@ -212,9 +220,9 @@ def api_ai_metrics():
 
 if __name__ == "__main__":
     init_db()
-    print(f"\n=======================================================")
-    print(f"🩸 AI BLOOD BANK MANAGEMENT SYSTEM - PRODUCTION READY")
-    print(f"🔬 Biometric Scanner + XGBoost ML Classifier")
-    print(f"🌐 Server running at: http://{HOST}:{PORT}")
-    print(f"=======================================================\n")
+    print("\n=======================================================")
+    print("[+] AI BLOOD BANK MANAGEMENT SYSTEM - PRODUCTION READY")
+    print("[+] Biometric Scanner + XGBoost ML Classifier")
+    print(f"[+] Server running at: http://{HOST}:{PORT}")
+    print("=======================================================\n")
     app.run(host=HOST, port=PORT, debug=False)
