@@ -1,0 +1,15 @@
+# Core Web Framework
+flask>=3.0.0
+werkzeug>=3.0.0
+jinja2>=3.1.2
+
+# Machine Learning & Data Science
+xgboost>=2.0.0
+scikit-learn>=1.4.0
+scipy>=1.10.0
+numpy>=1.24.0
+pandas>=2.0.0
+joblib>=1.3.0
+
+# Biometric & Computer Vision
+pillow>=10.0.0

@@ -1,0 +1,80 @@
+/* Custom Styles for AI Blood Bank Management System */
+
+/* Scanner Pad Glassmorphism & Glow */
+.scanner-pad {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #111827 0%, #030712 100%);
+    box-shadow: 0 0 30px rgba(225, 29, 72, 0.15), inset 0 0 20px rgba(225, 29, 72, 0.1);
+}
+
+.scanner-pad:hover {
+    box-shadow: 0 0 45px rgba(225, 29, 72, 0.3), inset 0 0 30px rgba(225, 29, 72, 0.2);
+}
+
+.scanner-pad.scanning {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 50px rgba(244, 63, 94, 0.6), inset 0 0 35px rgba(244, 63, 94, 0.4);
+}
+
+/* Biometric Laser Scanline Animation */
+.laser-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, #f43f5e 50%, transparent 100%);
+    box-shadow: 0 0 15px #f43f5e, 0 0 30px #e11d48;
+    z-index: 25;
+    animation: laserScan 1.6s ease-in-out infinite;
+}
+
+@keyframes laserScan {
+    0% {
+        top: 5%;
+        opacity: 0.3;
+    }
+    50% {
+        top: 90%;
+        opacity: 1;
+    }
+    100% {
+        top: 5%;
+        opacity: 0.3;
+    }
+}
+
+/* Fingerprint Pulsing */
+.pulse-glow {
+    animation: pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(244, 63, 94, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+    }
+}
+
+/* Tab transitions */
+.tab-btn.active {
+    border-color: #f43f5e !important;
+    color: #fb7185 !important;
+}
+
+/* Scrollbar customizations */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
